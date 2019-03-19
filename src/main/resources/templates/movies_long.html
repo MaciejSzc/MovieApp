@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Movies Long Version</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 <body>
 
+<div th:object="${movie}">
+<span th:text="*{movie.getTitle()}"></span>
+<span th:text="*{movie.getAuthor()}"></span>
+<span th:text="*{movie.getLongSum()}"></span>
+</div>
+
+<button><a href="/">Strona główna</a></button>
 
 </body>
 </html>

@@ -7,4 +7,5 @@ import pl.maciejszczesny.movie_app.models.entities.MovieEntity;
 @Repository
 public interface MovieRepository extends CrudRepository<MovieEntity, Integer> {
 
+
 }

@@ -22,11 +22,11 @@
     </thead>
     <tbody>
     <tr th:each="movie : ${movies}">
-        <td><a href="/long"><span th:text="${movie.getTitle()}"></span></a></td>
+        <td><a th:href="${'/long' + movie.getId()}"><span th:text="${movie.getTitle()}"></span></a></td>
         <td><span th:text="${movie.getShortSum()}"></span></td>
         <td><span th:text="${movie.getGenre()}"></span></td>
     </tr>
     </tbody>
-</table>
+    </table>
 </body>
 </html>
