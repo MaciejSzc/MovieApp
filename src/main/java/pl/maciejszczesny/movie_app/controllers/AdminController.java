@@ -27,12 +27,13 @@ public class AdminController {
     }
 
     @PostMapping("/admin")
-    public String addMovie(@ModelAttribute @Valid MovieForm movieForm, BindingResult bindingResult, Model model){
+    public String addMovie(@ModelAttribute("add") @Valid MovieForm movieForm, BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
             model.addAttribute("warn", "Wprowadź poprawne dane.");
             return "admin";
         }
         movieService.addMoive(movieForm);
+
         return "admin";
     }
 

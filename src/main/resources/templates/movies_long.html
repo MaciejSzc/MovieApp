@@ -13,9 +13,9 @@
 <body>
 
 <div th:object="${movie}">
-<span th:text="*{movie.getTitle()}"></span>
-<span th:text="*{movie.getAuthor()}"></span>
-<span th:text="*{movie.getLongSum()}"></span>
+<span th:text="${movie.getTitle()}"></span>
+<span th:text="${movie.getAuthor()}"></span>
+<span th:text="${movie.getLongSum()}"></span>
 </div>
 
 <button><a href="/">Strona główna</a></button>

@@ -8,6 +8,9 @@
             text-decoration: none;
             color: black;
         }
+        span{
+            margin-right: 30px;
+        }
     </style>
 </head>
 <body>
@@ -22,9 +25,10 @@
     </thead>
     <tbody>
     <tr th:each="movie : ${movies}">
-        <td><a th:href="${'/long' + movie.getId()}"><span th:text="${movie.getTitle()}"></span></a></td>
+        <td><a th:href="${'/long/' + movie.getId()}"><span th:text="${movie.getTitle()}"></span></a></td>
         <td><span th:text="${movie.getShortSum()}"></span></td>
-        <td><span th:text="${movie.getGenre()}"></span></td>
+        <td><span th:text="${movie.getGenre()}"></span> <a th:href="${'/delete/'+ movie.getId() }">Usuń</a></td>
+
     </tr>
     </tbody>
     </table>

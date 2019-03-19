@@ -23,9 +23,16 @@ public void addMoive(MovieForm movieForm){
     movieRepository.save(movieEntity);
 }
 
-public void deleteMovie(MovieEntity movieEntity){
- movieRepository.delete(movieEntity);
+public void deleteMovie(int id){
+ movieRepository.deleteById(id);
 }
 
+public MovieEntity findById(int id){
+    return movieRepository.findById(id).get();
+}
+
+public Iterable<MovieEntity> findAll(){
+   return movieRepository.findAll();
+}
 
 }
