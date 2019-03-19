@@ -14,14 +14,15 @@ public class MovieController {
 
     @GetMapping("/")
     public String movie(Model model){
+        model.addAttribute("movies", movieRepository.findAll());
 
-        return "movie_show";
+        return "movies";
     }
 
     @GetMapping("/long")
     public String movieL(Model model){
 
-        return "movie_show_long";
+        return "movies_long";
     }
 
 

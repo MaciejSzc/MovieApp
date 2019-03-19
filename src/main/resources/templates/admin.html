@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<h1>Dodaj film:</h1>
+<h2 th:text="${warn}"></h2>
+<form action="/admin" method="post" th:object="${add}">
+    Tytuł:                      <input type="text" th:field="*{title}" required><br/>
+    Autor:                      <input type="text" th:field="*{author}" required><br/>
+    Rok wydania:                <input type="text" th:field="*{year}" required><br/>
+    Opis(krótki- max 250 słów): <input type="text" th:field="*{shortSum}" required><br/>
+    Opis:                       <input type="text" th:field="*{longSum}" required><br/>
+    Gatunek:                    <input type="text" th:field="*{genre}" required><br/>
+    <input type="submit" value="Wyślij">
+</form>
+<button><a href="/">Strona główna</a></button>
+</body>
+</html>
